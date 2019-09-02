@@ -1,0 +1,28 @@
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Entreprise</th>
+            <th scope="col">RaisonSocial</th>
+            <th scope="col">Ninea</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let partenaire of partenaires">
+            <td>{{partenaire.id}}</td>
+            <td>{{partenaire.entreprise}}</td>
+            <td>{{partenaire.raisonsocial}}</td>
+            <td>{{partenaire.ninea}}</td>
+            <td>{{partenaire.adresse}}</td>
+            <td>{{partenaire.statut}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

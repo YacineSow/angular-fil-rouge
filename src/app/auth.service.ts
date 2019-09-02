@@ -23,9 +23,9 @@
 //     this._router.navigate(['/events'])
 //   }
 
-//   getToken() {
-//     return localStorage.getItem('token')
-//   }
+   getToken() {
+     return localStorage.getItem('token')
+   }
 
    loggedIn() {
      return !!localStorage.getItem('token')    
