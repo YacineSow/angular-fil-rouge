@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard } from './auth.guard';
 import { ListepartenairesComponent } from './listepartenaires/listepartenaires.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 const routes: Routes = [
   {
@@ -28,8 +29,8 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'register',
-    component: RegisterComponent
+    path: 'transaction',
+    component: TransactionComponent
   },
   {
     path: 'listepartenaires',

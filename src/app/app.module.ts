@@ -16,6 +16,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { ListepartenairesComponent } from './listepartenaires/listepartenaires.component';
 import { PartenaireService } from './services/partenaire.service';
+import { TransactionComponent } from './transaction/transaction.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { PartenaireService } from './services/partenaire.service';
     EventsComponent,
     SpecialEventsComponent,
     UploadImageComponent,
-    ListepartenairesComponent
+    ListepartenairesComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,
