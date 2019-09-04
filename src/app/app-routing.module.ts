@@ -8,6 +8,7 @@ import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AuthGuard } from './auth.guard';
 import { ListepartenairesComponent } from './listepartenaires/listepartenaires.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { DepotComponent } from './depot/depot.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'partenaires',
     component:ListepartenairesComponent
+  },
+  {
+    path: 'depot',
+    component:DepotComponent
   }
 ];
 

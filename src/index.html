@@ -1,8 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.scss" rel="stylesheet" id="bootstrap-scss">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/scss/bootstrap.min.scss" rel="stylesheet" id="bootstrap-scss">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/scss/bootstrap.min.scss" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.scss/3.5.2/animate.min.scss">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/scss/all.scss" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/scss/bootstrap.min.scss" rel="stylesheet" id="bootstrap-scss">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/scss/bootstrap.min.scss" rel="stylesheet" id="bootstrap-scss">
+
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/scss/font-awesome.scss">
   <meta charset="utf-8">
   <title>FilRougeAngular</title>
   <base href="/">
@@ -14,6 +22,130 @@
 </head>
 <body>
   <app-root></app-root>
+
+
+  <script>
+    $(document).ready(function(){
+        
+        //-- Click on terms and conditions
+        $(".term").click(function(){
+            var ctrl = $(this).find("i");
+            if (ctrl.hasClass("fa-check-square-o")){
+                ctrl.attr("class","fa fa-square-o");
+            }else{
+                ctrl.attr("class", "fa fa-check-square-o");
+            }
+        }) 
+
+        $("input").blur(function(){
+            if ($(this).val() != ""){
+                $(this).parent().css({"color":"black"});
+                $(this).css({"border-bottom":"1px solid silver","color":"gray"});                 
+            }
+        })
+        
+        //--- CONTINUE ---
+        $("form > p > a").click(function(){
+            //-- Detect terms and conditions
+            var term = false;
+            if ($(".term > i").hasClass('fa-check-square-o')){
+                term = true;
+            }
+            
+            //-- only example
+            var user = {};
+            user.name = $("input[name='name']").val();
+            user.id = $("input[name='id']").val();
+            user.phone = $("input[name='phone']").val();
+            user.email = $("input[name='email']").val();
+            user.term = term;
+
+            //-- Validator            
+            $("input").each(function(e, valor){
+                var error = false;
+                if ($(this).val() == ""){
+                    error = true;
+                }
+                if (error === true){
+                    //-- with errors
+                    $(this).parent().css({"color":"red"});
+                    $(this).css({"border-bottom":"1px solid red"});
+                }else{
+                    //-- without errors
+                    $(this).parent().css({"color":"black"});
+                    $(this).css({"border-bottom":"1px solid silver","color":"gray"}); 
+                }
+            })
+
+            //-- msg example
+            $("body").append(JSON.stringify(user) + "<br>");
+        })
+    })
+  </script>
+
+  <script>
+    	var i=0;
+	$(document).ready(function(){
+     $('#add_more').on('click', function(){
+      var colorR = Math.floor((Math.random() * 256));
+      var colorG = Math.floor((Math.random() * 256));
+      var colorB = Math.floor((Math.random() * 256));
+      i++;
+      var html ='<div id="append_no_'+i+'" class="animated bounceInLeft">'+
+          '<div class="input-group mt-3">'+
+		  '<div class="input-group-prepend">'+
+		  '<span class="input-group-text br-15" style="color:rgb('+colorR+','+colorG+','+colorB+'">'+
+		  '<i class="fas fa-user-graduate"></i></span>'+
+		  '</div>'+
+		  '<input type="text" placeholder="Student Name"  class="form-control"/>'+
+		  '</div>'+
+		  '<div class="input-group mt-3">'+
+		  '<div class="input-group-prepend">'+
+		  '<span class="input-group-text br-15" style="color:rgb('+colorR+','+colorG+','+colorB+'">'+
+		  '<i class="fas fa-phone-square"></i></span>'+
+		  '</div>'+
+		  '<input type="text" placeholder="Student Phone" class="form-control"/>'+
+		  '</div>'+
+		  '<div class="input-group mt-3">'+
+		  '<div class="input-group-prepend">'+
+		  '<span class="input-group-text br-15" style="color:rgb('+colorR+','+colorG+','+colorB+'">'+
+		  '<i class="fas fa-at"></i></span>'+
+		  '</div>'+
+		  '<input type="email" placeholder="Student Email" class="form-control"/>'+
+		  '</div></div>';
+
+	  $('#dynamic_container').append(html);
+	  $('#remove_more').fadeIn(function(){
+	  	 $(this).show();
+	  });
+     });
+
+     $('#remove_more').on('click', function(){
+         
+         $('#append_no_'+i).removeClass('bounceInLeft').addClass('bounceOutRight')
+            .fadeOut(function(){
+            	$(this).remove();
+            });
+            i--;
+            if(i==0){
+            	$('#remove_more').fadeOut(function(){
+            		$(this).hide()
+            	});;
+            }
+   
+     });
+	});
+  </script>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

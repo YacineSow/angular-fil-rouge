@@ -3,7 +3,7 @@ export interface Partenaire {
     entreprise: string,
     raisonsocial: string,
     ninea: string,
-    adresse: string,
+    adressesociete: string,
     statut: string
 
 }

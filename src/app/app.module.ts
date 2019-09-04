@@ -17,6 +17,9 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
 import { ListepartenairesComponent } from './listepartenaires/listepartenaires.component';
 import { PartenaireService } from './services/partenaire.service';
 import { TransactionComponent } from './transaction/transaction.component';
+import { DepotComponent } from './depot/depot.component';
+import { TransactionService } from './transaction.service';
+import { DepotService } from './depot.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,8 @@ import { TransactionComponent } from './transaction/transaction.component';
     SpecialEventsComponent,
     UploadImageComponent,
     ListepartenairesComponent,
-    TransactionComponent
+    TransactionComponent,
+    DepotComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import { TransactionComponent } from './transaction/transaction.component';
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
-  }, PartenaireService],
+  }, PartenaireService, TransactionService, DepotService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
