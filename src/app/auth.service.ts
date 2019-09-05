@@ -1,27 +1,29 @@
  import { Injectable } from '@angular/core';
  import { HttpClient } from '@angular/common/http'
+import { Router } from '@angular/router';
 
 
  @Injectable()
  export class AuthService {
 
-   private _registerUrl = "http://localhost:8000/user/new";
+   //private _registerUrl = "http://localhost:8000/user/new";
    private _loginUrl = "http://localhost:8000/api/login_check";
 
-   constructor(private http: HttpClient) { }
+   constructor(private http: HttpClient,
+              private _router: Router) { }
 
-   registerUser(user) {
-     return this.http.post<any>(this._registerUrl, user)
-   }
+  //  registerUser(user) {
+  //    return this.http.post<any>(this._registerUrl, user)
+  //  }
 
    loginUser(user) {
      return this.http.post<any>(this._loginUrl, user)
    }
 
-//   logoutUser() {
-//     localStorage.removeItem('token')
-//     this._router.navigate(['/events'])
-//   }
+  logoutUser() {
+    localStorage.removeItem('token')
+    this._router.navigate(['/acceuil'])
+  }
 
    getToken() {
      return localStorage.getItem('token')

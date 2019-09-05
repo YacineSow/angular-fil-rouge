@@ -2,7 +2,7 @@
     <div class="d-flex justify-content-center">
       <div class="card mt-5 col-md-4 animated bounceInDown myForm">
         <div class="card-header">
-          <h4>Depot</h4>
+          <h4>Compte</h4>
         </div>
         <div class="card-body">
           <form>
@@ -11,19 +11,19 @@
                 <div class="input-group-prepend">
                   
                 </div>
-                <input [(ngModel)]="depotData.montant" name="montant" type="number" placeholder="montant" class="form-control" required/>
+                <input [(ngModel)]="compteData.solde" name="solde" type="number" placeholder="solde" class="form-control" required/>
               </div>
               <div class="input-group mt-3">
                 <div class="input-group-prepend">
                   
                 </div>
-                <input [(ngModel)]="depotData.numcompte" name="numcompte" type="number" placeholder="numero de compte" class="form-control" required/>
+                <input [(ngModel)]="compteData.partenaire" name="partenaire" type="number" placeholder="partenaire_id" class="form-control" required/>
               </div>
             </div>
           </form>
         </div>
         <div class="card-footer">
-          <button (click)="postFile()" class="btn btn-success btn-sm float-right submit_btn"><i class="fas fa-arrow-alt-circle-right"></i> Submit</button>
+          <button (click)="postFile()" class="btn btn-success btn-sm float-right submit_btn"><i class="fas fa-arrow-alt-circle-right"></i>Submit</button>
         </div>
       </div>
     </div>

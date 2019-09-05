@@ -9,15 +9,21 @@ import { AuthGuard } from './auth.guard';
 import { ListepartenairesComponent } from './listepartenaires/listepartenaires.component';
 import { TransactionComponent } from './transaction/transaction.component';
 import { DepotComponent } from './depot/depot.component';
+import {CompteComponent } from './compte/compte.component';
+import {AcceuilComponent } from './acceuil/acceuil.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/events',
+    redirectTo: '/login',
     pathMatch: 'full'
   },
   {
-    path: 'events',
+    path: 'acceuil',
+    component: AcceuilComponent
+  },
+  {
+    path: 'ajout',
     component: EventsComponent
   },
   {
@@ -37,13 +43,17 @@ const routes: Routes = [
     path: 'listepartenaires',
     component:ListepartenairesComponent
   },
-  {
-    path: 'partenaires',
-    component:ListepartenairesComponent
-  },
+  // {
+  //   path: 'partenaires',
+  //   component:ListepartenairesComponent
+  // },
   {
     path: 'depot',
     component:DepotComponent
+  },
+  {
+    path: 'compte',
+    component:CompteComponent
   }
 ];
 

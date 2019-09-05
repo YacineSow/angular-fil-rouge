@@ -20,6 +20,8 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { DepotComponent } from './depot/depot.component';
 import { TransactionService } from './transaction.service';
 import { DepotService } from './depot.service';
+import { CompteComponent } from './compte/compte.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { DepotService } from './depot.service';
     UploadImageComponent,
     ListepartenairesComponent,
     TransactionComponent,
-    DepotComponent
+    DepotComponent,
+    CompteComponent,
+    AcceuilComponent
   ],
   imports: [
     BrowserModule,
