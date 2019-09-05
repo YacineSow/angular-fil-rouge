@@ -1,0 +1,38 @@
+<div class="container">
+    <header class="heading"> Retrait</header><hr>
+    <form action="post">
+    <div class="row ">
+      
+      <div class="col-sm-12">
+          <div class="row">
+          <div class="col-xs-4">
+            <label class="firstname">CNI</label>
+          </div>
+          <div class="col-xs-8">
+              <input [(ngModel)]="retraitData.cni" type="number" name="cni" id="fname" placeholder="cni" class="form-control " required>
+          </div>
+          </div>
+      </div>
+
+      <div class="col-sm-12">
+        <div class="row">
+        <div class="col-xs-4">
+            <label class="lastname">Code d' envoie</label>
+          </div>
+          <div class ="col-xs-8">	 
+            <input [(ngModel)]="retraitData.codetransaction" type="text" name="codetransaction" id="lname" placeholder="Code d' envoie" class="form-control last" required>
+          </div>
+        </div>
+      </div>
+       <div class="col-sm-12">
+          <div class="col-sm-12">
+            <button (click)="postFile()" type="button"  class="btn btn-primary float-left">Save</button>
+          </div>
+
+        </div>  
+    </div>	
+  </form> 	 
+</div>
+
+ 
+ 

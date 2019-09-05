@@ -11,6 +11,7 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { DepotComponent } from './depot/depot.component';
 import {CompteComponent } from './compte/compte.component';
 import {AcceuilComponent } from './acceuil/acceuil.component';
+import {RetraitComponent } from './retrait/retrait.component';
 
 const routes: Routes = [
   {
@@ -36,8 +37,12 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'transaction',
+    path: 'envoie',
     component: TransactionComponent
+  },
+  {
+    path: 'retrait',
+    component: RetraitComponent
   },
   {
     path: 'listepartenaires',
